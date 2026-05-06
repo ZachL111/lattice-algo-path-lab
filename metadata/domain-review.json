@@ -1,0 +1,73 @@
+{
+  "repo": "lattice-algo-path-lab",
+  "language": "OCaml",
+  "category": "Algorithms",
+  "goal": "Package an OCaml local lab for path analysis with append-only fixtures, checkpoint recovery checks, and documented operating limits.",
+  "review_model": {
+    "terms": [
+      "input width",
+      "search depth",
+      "boundary pressure",
+      "complexity"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "input width",
+      "signal": 53,
+      "slack": 40,
+      "drag": 11,
+      "confidence": 73,
+      "score": 186,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "search depth",
+      "signal": 80,
+      "slack": 54,
+      "drag": 14,
+      "confidence": 89,
+      "score": 261,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "boundary pressure",
+      "signal": 50,
+      "slack": 50,
+      "drag": 19,
+      "confidence": 56,
+      "score": 149,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "complexity",
+      "signal": 70,
+      "slack": 37,
+      "drag": 30,
+      "confidence": 72,
+      "score": 159,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "input width",
+      "signal": 75,
+      "slack": 23,
+      "drag": 19,
+      "confidence": 89,
+      "score": 205,
+      "lane": "ship"
+    }
+  ]
+}
