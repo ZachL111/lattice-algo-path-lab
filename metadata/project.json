@@ -1,0 +1,32 @@
+{
+  "index": 559,
+  "phase": 2,
+  "batch": 63,
+  "name": "lattice-algo-path-lab",
+  "planned_name": "lattice-algo-path-lab",
+  "language": "OCaml",
+  "category": "Algorithms",
+  "goal": "Package an OCaml local lab for path analysis with append-only fixtures, checkpoint recovery checks, and documented operating limits.",
+  "repository_url": "https://github.com/ZachL111/lattice-algo-path-lab",
+  "verification_command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify.ps1",
+  "model": {
+    "inputs": [
+      "demand",
+      "capacity",
+      "latency",
+      "risk",
+      "weight"
+    ],
+    "threshold": 167,
+    "risk_penalty": 7,
+    "latency_penalty": 3,
+    "weight_bonus": 4,
+    "decision_rule": "accept when score is greater than or equal to threshold, otherwise review"
+  },
+  "quality_gates": [
+    "readme constraint scan",
+    "fixture presence check",
+    "metadata JSON parse",
+    "language verifier"
+  ]
+}
